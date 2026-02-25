@@ -1,15 +1,36 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+@use "../abstracts/default";
 
 
-.mybox-2 {
-    width: 100px;
-    height: 200px;
-    background-color: red;
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    padding-top: 20px;
 }
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    width: 86%;
+    min-width: 275px;
+}
+
+.header-logo {
+    cursor: pointer;
+}
+
+.nav-actions {
+    display: flex;
+}
+
+#toggletheme {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 36px;
+}
+
+.careerpath {}
