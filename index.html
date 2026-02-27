@@ -9,19 +9,19 @@
 
 </head>
 
-<body class="switch-theme">
+<body>
     <!-- ჰედერზე მუშაობს გიო -->
     <header>
-        <nav>
+        <nav id="header-nav-menu">
             <div class="header-logo">
-                <img src="./asset/images/Logo.svg" alt="" class="light-logo switch-theme">
-                <img src="./asset/images/Logo-dark.png" alt="" class="dark-logo switch-theme">
+                <img src="./asset/images/Logo.svg" alt="" class="light-logo">
+                <img src="./asset/images/Logo-dark.png" alt="" class="dark-logo">
             </div>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+            <ul id="menu-list-wrapper" >
+                <li class="switch-theme">Home</li>
+                <li class="switch-theme">About US</li>
+                <li class="switch-theme">Services</li>
+                <li class="switch-theme">Contact</li>
             </ul>
             <div class="nav-actions">
                 <div id="toggletheme">
@@ -32,16 +32,28 @@
                         <img src="./asset/icons/header-sun-icon.svg " alt="Light Mode">
                     </div>
                 </div>
+
                 <div class="signin-container">
-                    <a href="">sign in</a>
-                    <button>free trial</button>
+                    <div id="header-btn-wrapper">
+                        <img src="./asset/icons/header-menu-icon.svg" alt="Menu" class="menu-btn   menu-light-icon"> 
+                        <img src="./asset/icons/header-close-icon.svg" alt="Close" class="menu-close-btn   menu-light-icon">
+                        <img src="./asset/icons/header-dark-menu-icon.svg" alt="Menu" class="dark-menu-btn   menu-dark-icon">
+                        <img src="./asset/icons/header-dark-close-icon.svg" alt="Close" class="dark-menu-close-btn   menu-dark-icon">
+                    </div>
+
+
+                    <div id="header-action-wrapper">
+                        <a href="" class="switch-theme">Sign In</a>
+                        <button>Free Trial</button>
+                    </div>
                 </div>
             </div>
         </nav>
+
+
         <div class="careerpath">
             <h1 class="switch-theme">CareerPathNow</h1>
         </div>
-
     </header>
     <!-- ჰედერზე მუშაობს გიო -->
 

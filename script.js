@@ -1,44 +1,55 @@
 const toggleBtn = document.getElementById("toggletheme");
-const darkClasses = document.querySelector(".switch-theme");
 const lightTheme = document.querySelector(".moon-icon-wrapper");
 const darkTheme = document.querySelector(".sun-icon-wrapper");
 const lightLogo = document.querySelector(".light-logo");
 const darkLogo = document.querySelector(".dark-logo");
+const lightIcon = document.querySelector(".light-icon");
+const darkIcon = document.querySelector(".dark-icon");
+
+// here start for menu
+const clickableMenu = document.getElementById("header-btn-wrapper")
+const Menu = document.querySelector(".menu-btn");
+const MenuCloseBtn = document.querySelector(".menu-close-btn");
+const DarkMenu = document.querySelector(".dark-menu-btn");
+const DarkMenuCloseBtn = document.querySelector(".dark-menu-close-btn");
+
 
 function applyTheme(theme) {
-    if (theme === "dark") {
-        document.body.classList.add("body-dark-mode");
-        darkClasses.classList.add("active");
-        darkTheme.style.display = "block";
-        lightTheme.style.display = "none";
-        darkLogo.style.display = "block";
-        lightLogo.style.display = "none";
-    } else {
-        document.body.classList.remove("body-dark-mode");
-        darkClasses.classList.remove("active");
-        darkTheme.style.display = "none";
-        lightTheme.style.display = "block";
-        darkLogo.style.display = "none";
-        lightLogo.style.display = "block";
-    }
+    const isDark = theme === "dark";
+
+    document.body.classList.toggle("body-dark-mode", isDark);
+    const allSwitches = document.querySelectorAll(".switch-theme");
+    allSwitches.forEach(el => {
+        el.classList.toggle("active", isDark);
+    });
+
+    darkTheme.style.display = isDark ? "block" : "none";
+    if (lightTheme) lightTheme.style.display = isDark ? "none" : "block";
+    if (darkLogo) darkLogo.style.display = isDark ? "block" : "none";
+    if (lightLogo) lightLogo.style.display = isDark ? "none" : "block";
+    if (darkIcon) darkIcon.style.display = isDark ? "block" : "none";
+    if (lightIcon) lightIcon.style.display = isDark ? "none" : "block";
 }
 
 const savedTheme = localStorage.getItem("theme");
-if (savedTheme) {
-    applyTheme(savedTheme);
-} else {
-    darkTheme.style.display = "none";
-    darkLogo.style.display = "none";
-}
-toggleBtn.addEventListener("click", function () {
-    const isNowDark = document.body.classList.toggle("body-dark-mode");
-    darkClasses.classList.toggle("active");
+applyTheme(savedTheme === "dark" ? "dark" : "light");
 
-    if (isNowDark) {
-        applyTheme("dark");
-        localStorage.setItem("theme", "dark");
-    } else {
-        applyTheme("light");
-        localStorage.setItem("theme", "light");
-    }
+toggleBtn?.addEventListener("click", function () {
+    const isDark = document.body.classList.contains("body-dark-mode");
+    const newTheme = isDark ? "light" : "dark";
+    applyTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
 });
+
+const menuList = document.getElementById("menu-list-wrapper")
+const navMenu = document.getElementById("header-nav-menu")
+const headerAction = document.getElementById("header-action-wrapper")
+
+clickableMenu.addEventListener("click", () => {
+    clickableMenu.classList.toggle("active");
+    menuList.classList.toggle("active");
+    navMenu.classList.toggle("active"); 
+    headerAction.classList.toggle("active"); 
+
+});
+
