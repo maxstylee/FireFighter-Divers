@@ -1,0 +1,128 @@
+@use "../abstracts/default";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght,YOPQ@100..900,300&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+@mixin input-style {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+}
+.form-section {
+  padding: 80px 20px;
+  background-color: #e8db84;
+  font-family: poppins, sans-serif; 
+  border-radius: 29px;
+
+  
+  .form-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    // border-radius: 29px;
+
+    h2 {
+      font-size: 42px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #000000;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #333333;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+    line-height: 1.5;
+  }
+}
+
+.contactForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    label {
+      font-weight: 500;
+      color: #333;
+    }
+
+    input {
+      @include input-style;
+    }
+  }
+
+  .textarea {
+    grid-column: span 2;
+    textarea {
+      @include input-style;
+      min-height: 120px;
+      resize: vertical;
+    }
+  }
+}
+
+.submit-btn {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  button {
+    background-color: #052a44;
+    color: #fff;
+    padding: 15px 43px 15px 43px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    width: fit-content;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+@include mobile {
+  .contactForm {
+    grid-template-columns: 1fr;
+
+    .textarea,
+    .submit-btn {
+      grid-column: span 1;
+    }
+
+    .submit-btn button {
+      width: 100%;
+    }
+  }
+}
