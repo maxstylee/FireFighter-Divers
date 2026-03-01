@@ -154,6 +154,112 @@ header nav ul.active {
   margin-right: 36px;
 }
 
+.careerpath {
+  padding-top: 40px;
+}
+
+#header-btn-wrapper {
+  cursor: pointer;
+}
+
+/* .about-us-container {
+  max-width: 75rem; // 1200px
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  justify-items: center;
+}
+
+.icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  background: #0d2b45;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+
+  img {
+    width: 1, 5rem;
+    height: auto;
+  }
+}
+ */
+.about-us {
+  padding: 6rem 1.5rem;
+  background: #f5f6f7;
+  max-width: 75rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.about-us .subtitle {
+  max-width: 50rem;
+  margin: 1rem auto 0;
+}
+.about-us .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+.about-us .card {
+  position: relative;
+  background: #ffffff;
+  padding: 4rem 1.5rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: 0.3s ease;
+}
+.about-us .card:hover {
+  transform: translateY(-0.5rem);
+}
+.about-us .card .card-text {
+  padding: 2rem;
+}
+.about-us .card .icon {
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: #0d2b45;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+.about-us .card .icon img {
+  width: 2rem;
+}
+.about-us .card h3 {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.about-us .card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 18rem;
+  margin: 0 auto;
+}
+.about-us .btn {
+  border-radius: 0.5rem;
+  background-color: #052a44;
+  color: #ffffff;
+  padding: 0.75rem 1.8rem;
+  margin: 2.5rem auto 0;
+}
+
 .form-section {
   padding: 80px 20px;
   background-color: #e8db84;
@@ -249,7 +355,6 @@ header nav ul.active {
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  width: -moz-fit-content;
   width: fit-content;
   transition: opacity 0.3s ease;
 }
@@ -380,13 +485,6 @@ header nav ul.active {
   padding-top: 20px;
   margin-top: 20px;
   color: #071210;
-}/*# sourceMappingURL=style.css.map */
-.careerpath {
-  padding-top: 40px;
-}
-
-#header-btn-wrapper {
-  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
